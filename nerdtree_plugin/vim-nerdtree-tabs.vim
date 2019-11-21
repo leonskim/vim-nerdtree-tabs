@@ -416,7 +416,7 @@ endfun
 " s:NERDTreeFindFile() {{{
 "
 fun! s:NERDTreeFindFile()
-  if s:IsNERDTreeOpenInCurrentTab() && bufname('%') != ''
+  if s:IsNERDTreeOpenInCurrentTab() && bufname('%') != '' && expand('%:p:h') =~ getcwd()
     silent NERDTreeFind
   endif
 endfun
